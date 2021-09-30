@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <!-- Imported our own custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Day Planner</title>
+</head>
+
+<body>
+    <header class="container-fluid bg-dark text-light mb-5 p-3">
+        <div class="d-flex align-items-center">
+            <h1>Alix's Day Planner</h1>
+            <h3 class="ml-auto">
+                moment().format('MMMM Do YYYY, h:mm:ss a');
+            </h3>
+        </div>
+    </header>
+
+    <div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-lg-6">
+                <ul id="sortable">
+                    <!-- Ask the class for skills and use them to populate this list -->
+                    <li class="ui-state-default">
+                        9am
+                    </li>
+                    <li class="ui-state-default">
+                        10am
+                    </li>
+                    <li class="ui-state-default">
+                        11am
+                    </li>
+                    <li class="ui-state-default">
+                        12 noon
+                    </li>
+                    <li class="ui-state-default">
+                        1pm
+                    </li>
+                    <li class="ui-state-default">
+                        2pm
+                    </li>
+                    <li class="ui-state-default">
+                        3pm
+                    </li>
+                    <li class="ui-state-default">
+                        4pm
+                    </li>
+                    <li class="ui-state-default">
+                        5pm
+                    </li>
+                    <li class="ui-state-default">
+                        6pm
+                    </li>
+                    <li class="ui-state-default">
+                        7pm
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        //Notice what the sortable function is doing—it is looking for an element with an id of sortable and applying the .sortable() function to it. Right afterwards, it will .disableSelection():
+        $(function () {
+            $('#sortable').sortable();
+            //https://api.jqueryui.com/disableselection/
+            // $('#sortable').disableSelection();//version added: 1.6, deprecated: 1.9
+        });
+    </script>
+</body>
+
+</html>
