@@ -19,7 +19,6 @@
     <header class="container-fluid bg-dark text-light mb-5 p-3">
         <div class="d-flex align-items-center">
             <h1>Alix's Day Planner</h1>
-
             <h2 class="ml-auto">
                 Todays Date: <p id="dayOne" class="dayOne"></p>
                 </p>
@@ -29,53 +28,36 @@
     <section class="plannerInput">
         <p class="lead">A simple calendar app for scheduling your work day</p>
         <h3>
-            The current time is : <p id="timeOne" class="timeOne"></p>
+            The current time is : <div id="timeOne" class="timeOne"></div>
         </h3>
-        <!--input box for adding events to the calendar-->
-
-        <div class="col-sm-3">
-            <label class="visually-hidden" for="specificSizeInputName">To do</label>
-            <input type="text" class="form-control" id="specificSizeInputName" placeholder="Tutor Session">
-            <label for="name">Pick a time</label>
-            <select id="student-names">
-                <option value="9am">9am</option>
-                <option value="10am">10am</option>
-                <option value="11am">11am</option>
-                <option value="12pm">noon</option>
-                <option value="1pm">1pm</option>
-                <option value="2pm">2pm</option>
-                <option value="3pm">3pm</option>
-                <option value="4pm">4pm</option>
-                <option value="5pm">5pm</option>
-            </select>
-        </div>
-        <div>
-            <ul class="plannerSaved">
-                <button id="timeButton">9am</button>
-                <li class="nine">A second item</li>
-                <button id="timeButton">10am</button>
-                <li class="ten">A second item</li>
-                <button id="timeButton">11am</button>
-                <li class="eleven">A second item</li>
-                <button id="timeButton">noon</button>
-                <li class="noon">A second item</li>
-                <li class="one">A second item</li>
-                <button id="timeButton">1pm</button>
-                <li class="two">A second item</li>
-                <button id="timeButton">2pm</button>
-                <li class="three">A second item</li>
-                <button id="timeButton">3pm</button>
-                <li class="fourm">A second item</li>
-                <button id="timeButton">4pm</button>
-                <li class="five">A second item</li>
-                <button id="timeButton">5pm</button>
-                <li class="list-group-item">A second item</li>
-            </ul>
-        </div>
-        </form>
+    </section>
+    <!--make a break here-->
+    <section>
         <!-- Timeblocks go here -->
 
-        <form>
+
+
+        <div class="card border-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">8am - 9am</h5>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Add Task:</label>
+                    <input class="form-control" type="text" placeholder="Tutoring" id="exampleFormControlInput1"
+                        aria-label="default input example">
+                </div>
+                <button id="saveButton">SAVE</button>
+                <div class="p-3">
+                    <label for="resultDiv" class="form-label">On schedule: </label>
+                    <div id="resultDiv"></div>
+                </div>
+                <!-- This is some text within a card body.-->
+            </div>
+        </div>
+
+
+
+
+
     </section>
 
     <!--scripts don't touch below-->
