@@ -1,6 +1,10 @@
 //header date
 var today = moment();
-$("#dayOne").text(today.format("MMM Do, YYYY, h:mm:ss a"));
+$("#dayOne").text(today.format("MMM Do, YYYY"));
+
+var currentTime = moment().format('h:mm:ss')
+$("#timeOne").text(currentTime)
+
 
 $(document).ready(function () {
 
