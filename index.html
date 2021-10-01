@@ -20,59 +20,62 @@
         <div class="d-flex align-items-center">
             <h1>Alix's Day Planner</h1>
 
-            <h2>
-                Todays Date :<p id="dayOne" class="dayOne"></p>
+            <h2 class="ml-auto">
+                Todays Date: <p id="dayOne" class="dayOne"></p>
                 </p>
             </h2>
         </div>
     </header>
-    <p class="lead">A simple calendar app for scheduling your work day</p>
-    <div class="container">
-    </div>
-    <!--input box for adding events to the calendar-->
-    <section class="row gx-3 gy-2 align-items-center">
+    <section class="plannerInput">
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <h3>
+            The current time is : <p id="timeOne" class="timeOne"></p>
+        </h3>
+        <!--input box for adding events to the calendar-->
+
         <div class="col-sm-3">
             <label class="visually-hidden" for="specificSizeInputName">To do</label>
             <input type="text" class="form-control" id="specificSizeInputName" placeholder="Tutor Session">
+            <label for="name">Pick a time</label>
+            <select id="student-names">
+                <option value="9am">9am</option>
+                <option value="10am">10am</option>
+                <option value="11am">11am</option>
+                <option value="12pm">noon</option>
+                <option value="1pm">1pm</option>
+                <option value="2pm">2pm</option>
+                <option value="3pm">3pm</option>
+                <option value="4pm">4pm</option>
+                <option value="5pm">5pm</option>
+            </select>
         </div>
-        <div class="col-sm-3">
-            <label class="visually-hidden" for="specificSizeInputGroupUsername">Time</label>
-            <div class="input-group">
-                <div class="input-group-text">@</div>
-                <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="9:00am">
-            </div>
+        <div>
+            <ul class="plannerSaved">
+                <button id="timeButton">9am</button>
+                <li class="nine">A second item</li>
+                <button id="timeButton">10am</button>
+                <li class="ten">A second item</li>
+                <button id="timeButton">11am</button>
+                <li class="eleven">A second item</li>
+                <button id="timeButton">noon</button>
+                <li class="noon">A second item</li>
+                <li class="one">A second item</li>
+                <button id="timeButton">1pm</button>
+                <li class="two">A second item</li>
+                <button id="timeButton">2pm</button>
+                <li class="three">A second item</li>
+                <button id="timeButton">3pm</button>
+                <li class="fourm">A second item</li>
+                <button id="timeButton">4pm</button>
+                <li class="five">A second item</li>
+                <button id="timeButton">5pm</button>
+                <li class="list-group-item">A second item</li>
+            </ul>
         </div>
-
-        <div class="col-auto">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
-                <label class="form-check-label" for="autoSizingCheck2">
-                    Priority
-                </label>
-            </div>
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Add to Schedule</button>
-        </div>
-    </section>
-    <!-- Timeblocks go here -->
-    <section>
-        <form>
-            <h3>
-                Today's Schedule:
-            </h3>
-            <div>
-                <table>
-                    <ul class="list-group">
-                        <li class="list-group-item active" aria-current="true">An active item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                        <li class="list-group-item">And a fifth one</li>
-                    </ul>
-                </table>
-            </div>
         </form>
+        <!-- Timeblocks go here -->
+
+        <form>
     </section>
 
     <!--scripts don't touch below-->
