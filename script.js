@@ -1,56 +1,55 @@
+var tasks = JSON.parse(localStorage.getItem("tasks"));
+if (tasks === null) {
+  tasks = { 9: [], 10: [], 11: [], 12: [], 1: [], 2: [], 3: [], 4: [], 5: [] }; //here
+}
+var currentDay = moment(); //header date
+$("#currentDay").text(currentDay.format("MMMM Do YYYY, h:mm:ss a"));
 
-// var today = moment(); //header date
-// $("#dayOne").text(today.format("MMM Do, YYYY"));
-// console.log(moment());
+let updateTime = function () {
+  setInterval(function () {
+    let currentTime = moment();
+    $("#currentDay").text(currentTime.format("MMMM Do YYYY, h:mm:ss a"));
+  }, 1000);
+};
+updateTime();
 
-// var currentTime = moment().format('h:mm') // Current Time
-// $("#timeOne").text(currentTime)
-// console.log(moment().format());
+var saveButton9 = document.getElementById("saveButton9"); //repeat here
+var saveButton10 = document.getElementById("saveButton10");
+var saveButton11 = document.getElementById("saveButton11");
+var saveButton12 = document.getElementById("saveButton12");
+var saveButton1 = document.getElementById("saveButton1");
+var saveButton2 = document.getElementById("saveButton2");
+var saveButton3 = document.getElementById("saveButton3");
+var saveButton4 = document.getElementById("saveButton4");
+var saveButton5 = document.getElementById("saveButton5");
 
-// //let updateTime = function () {
-// // let currentTime = moment().format('h:mm')
-// // $("#timeOne").text(currentTime)
+function saveVal(event) {
+  event.preventDefault();
+  let input = event.target.id;
+  let inputVal = document.querySelector("." + input).value;
+  let matches = input.match(/\d+$/);
+  let section = matches[0];
+  tasks[section].push(inputVal);
+  displayTasks();
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
-// // Here we want to use setInterval to constantly update the time
-// // To continuously call the functions, we will use setInterval
-// setInterval(updateTime, 1000);
-// setInterval(updateHour, 1000);
-// setInterval(updateMinutes, 1000);
-// setInterval(updateSeconds, 1000);
-// ///why error
+function displayTasks() {
+  for (const [key, value] of Object.entries(tasks)) {
+    let displayString = "";
+    value.forEach((e) => (displayString += e.toString() + ", "));
+    displayString = displayString.slice(0, -2);
+    document.getElementById(key).innerText = displayString;
+  }
+}
+displayTasks();
 
-var messageBox = document.getElementById(""); //telling which text box msg
-var saveButton = document.getElementById("saveButton"); //telling which savebtn
-
-// Testing Task feedback to div
-var task = document.getElementById("resultDiv9")
-
-document.getElementById("resultDiv9").innerHTML = task.toString();
-console.log("task");
-
-
-// function textNine() { //function to save the text in the box
-//     var nineMsg = { //new variable to hold message
-//         messageBox: messageBox.value.trim() //text box msg
-//     };
-
-//     localStorage.setItem("saveButton", JSON.stringify(saveMessage)); //saving to the local storage
-
-//     function renderText() { //showing the saved text on the page
-//         var nineMsg = JSON.parse(localStorage.getItem("saved-comment"));
-//         if (nineMsg !== null) {
-//             document.getElementById("nineMsg").innerHTML = nineMsg.comment;
-//         } else {
-//             return;
-//         }
-//     }
-//     saveButton.addEventListener("click", function (event) { //when you click this button it does these things
-//         event.preventDefault();
-//         textNine(); //when button is clicked it runs this function
-//         rendertextNine(); //when button is clicked it runs this function
-//     });
-
-//     function init() {
-//         renderText();
-//     };
-//     init();
+saveButton9.addEventListener("click", saveVal); //repeat here
+saveButton10.addEventListener("click", saveVal);
+saveButton11.addEventListener("click", saveVal);
+saveButton12.addEventListener("click", saveVal);
+saveButton1.addEventListener("click", saveVal);
+saveButton2.addEventListener("click", saveVal);
+saveButton3.addEventListener("click", saveVal);
+saveButton4.addEventListener("click", saveVal);
+saveButton5.addEventListener("click", saveVal);
